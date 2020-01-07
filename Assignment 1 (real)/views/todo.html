@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todos</title>
+    <style>
+        [data-completed="true"] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todos</h1>
+    <ul id="todos">
+
+    </ul>
+    <script>
+    (async () => {
+        const todos = await (await fetch("http://localhost:3000/todo")).json();
+        const $list = document.querySelector("#todos");
+        for (let todo of todos[Symbol.iterator]()) {
+            let $todo = document.createElement("li");
+            $todo.textContent = todo.title;
+            $todo.dataset["userId"] = todo.userId;
+            $todo.dataset["id"] = todo.id;
+            $todo.dataset["completed"] = todo.completed;
+            $list.appendChild(
+                $todo
+            );
+        }
+    })()
+    </script>
+</body>
+</html>

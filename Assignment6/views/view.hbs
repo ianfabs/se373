@@ -1,0 +1,25 @@
+<nav>
+    <a href="/employees/create">Create</a>
+    |
+    <a href="/employees/update/{{_id}}">Update</a>
+    |
+    <a href="/employees/delete/{{_id}}">Delete</a>
+</nav>
+
+<br/>
+
+<form>
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" readonly value="{{firstName}}"/>
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" readonly value="{{lastName}}"/>
+    <label for="department">Department</label>
+    <input name="department" readonly value="{{department}}"/>
+    <label for="startDate">Start Date</label>
+    <input type="datetime" name="startDate" readonly value="{{formatDate startDate}}"/>
+    <label for="jobTitle">Job Title</label>
+    <input type="text" name="jobTitle" readonly value="{{jobTitle}}"/>
+    <label for="salary">Salary</label>
+    <input type="number" value="{{salary}}" readonly/>
+</form>
+

@@ -1,0 +1,47 @@
+<nav>
+    <a href="/employees/create">Create New Employee</a>
+</nav>
+<br/>
+<div>
+{{#each headers}}
+    <span>
+        <b>{{this}}</b>
+    </span>
+{{~/each}}
+<span>
+    <b>Actions</b>
+</span>
+{{#each all}}
+    <span>
+        {{this.firstName}}
+    </span>
+    <span>
+        {{this.lastName}}
+    </span>
+    <span>
+        {{this.department}}
+    </span>
+    <span>
+        {{displayDate this.startDate}}
+    </span>
+    <span>
+        {{this.jobTitle}}
+    </span>
+    <span>
+        ${{formatCurrency this.salary}}
+    </span>
+    <span>
+        <a href="/employees/view/{{this._id}}">View</a> |
+        <a href="/employees/update/{{this._id}}">Update</a> | 
+        <a href="/employees/delete/{{this._id}}" class="delete">Delete</a>
+    </span>
+{{~/each}}
+</div>
+
+<style>
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+        row-gap: 10px;
+    }
+</style>

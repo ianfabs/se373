@@ -1,0 +1,28 @@
+<nav>
+    <a href="/employees/all">View All Employees</a>
+</nav>
+<br/>
+<form action="/employees/create" method="POST">
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" placeholder="John" autocomplete="off"/>
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" placeholder="Doe" autocomplete="off"/>
+    <label for="department">Department</label>
+    <input name="department" placeholder="Accounting" list="departments" autocomplete="off"/>
+    <label for="startDate">Start Date</label>
+    <input type="date" name="startDate" />
+    <label for="jobTitle">Job Title</label>
+    <input type="text" name="jobTitle" placeholder="Team Lead" autocomplete="off"/>
+    <label for="salary">Salary</label>
+    <input type="number" name="salary" autocomplete="off" placeholder="90,000"/>
+    <br/>
+    <input type="submit" value="Create Employee" class="update">
+</form>
+
+<datalist id="departments">
+    <option value="Accounting" />
+    <option value="Human Resources" />
+    <option value="Training" />
+    <option value="Security" />
+    <option value="Sales" />
+</datalist>

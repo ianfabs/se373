@@ -1,0 +1,77 @@
+body {
+  padding: 50px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+form > *:nth-child(2n):not([type=submit]) {
+  margin-bottom: 1vh;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  font-size: 1rem;
+  padding: 8px 8px;
+  padding-left: 0;
+  border: none;
+  transition: 100ms border-bottom ease-in-out;
+  border-bottom: 0.5px solid #787EE8;
+  width: 250px;
+}
+input:focus {
+  outline: none;
+  border-bottom: 2px solid #787EE8;
+}
+
+input:read-only {
+  border: none;
+}
+
+input[type=submit] {
+  width: 258px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit].update {
+  background: #5C2BFF;
+  color: white;
+}
+
+input[type=submit].create {
+  background: #2BFF5C;
+  color: white;
+}
+
+input[type=submit].delete {
+  background: #FF4E2B;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.view {
+  color: #2BFF5C;
+}
+
+a.delete {
+  color: #FF4E2B;
+}
